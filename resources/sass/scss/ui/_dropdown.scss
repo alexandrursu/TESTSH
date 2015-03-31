@@ -1,0 +1,36 @@
+.dropdown-menu {
+    @include adjust-font-size-to(14px);
+    border-radius:0;
+    border-color:$gray2-color;
+    box-shadow:none;
+
+    >li {
+        > a {
+            font-weight:600;
+
+            &:hover,
+            &:focus {
+                background:transparent;
+            }
+        }
+    }
+}
+
+
+.navbar .nav li.dropdown > .dropdown-toggle .caret {
+    // margin-top:10px;
+}
+
+.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    background: transparent;
+    color:#E2E2E2;
+    @include opacity(.8);
+}
+
+.navbar .pull-right > li > .dropdown-menu,
+.navbar .nav > li > .dropdown-menu.pull-right {
+    right:0px;
+    left: auto;
+}

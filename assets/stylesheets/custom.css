@@ -1,0 +1,88 @@
+div.smart-form .ng-invalid,
+div.smart-form .ng-invalid:focus {
+    border-color: orangered;
+}
+
+div.answers-block__custom-answer__row.final_question {
+    padding: 0 10em 0 0;
+}
+
+div.answers-block__custom-answer__row.final_question .btn {
+    right: 0;
+}
+
+div.final_question-checkbox {
+    position: absolute;
+    display: inline;
+    padding-left: 10px;
+    width: 8em;
+}
+
+div.final_question-checkbox input[type="checkbox"] {
+    margin-top: 8px;
+    margin-right: 10px;
+}
+
+.table--data.table--stats--full .ticket-content .ticket-content__infos.middle-item {
+    padding-top: 2em;
+}
+
+form[name="finalStepForm"] .field-checkbox .browse-btn {
+    float: left;
+    margin-right: 20px;
+}
+
+form[name="finalStepForm"] .field-checkbox .browse-btn a.btn-default {
+    background-color: #e0e0e0;
+}
+
+form[name="finalStepForm"] .field-checkbox input[type="checkbox"],
+form[name="finalStepForm"] .field-checkbox label {
+    margin-top: 7px;
+}
+
+.questions-manager__block .field-input.editable {
+    display: block;
+}
+
+.questions-manager__block .field-input.editable label:first-child {
+    display: inline;
+}
+
+.question-block__fieldset__action {
+    float: none;
+    color: #090;
+}
+
+pre.thanks-msg {
+    width: 100%;
+    border: 1px solid #d7f2d7;
+    background: #f6fef6;
+    color: #090;
+}
+
+/* Keywords grid */
+
+.table.keywords .list-group-item__action {
+    top: auto;
+    margin-top: 0;
+    right: 0;
+}
+.table.keywords tbody tr:hover{
+    cursor: auto;
+}
+.table.keywords .list-group-item__action,
+.table.keywords tr.ticket-row,
+.table.keywords td.results-found:hover,
+.table.keywords td.value--results.has-ticket:hover {
+    cursor: pointer !important;
+}
+.table.keywords .fa-eye.list-group-item__action {
+    right: 10px;
+    font-size: 0.8rem;
+    margin-top: -.4em;
+}
+
+.load-more-link {
+    margin: 20px auto 0;
+}

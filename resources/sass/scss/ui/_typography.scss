@@ -1,0 +1,73 @@
+@include establish-baseline();
+
+//additional icon
+.fa-arrows-alt-r:after {
+  content: "\f0b2";
+  font-family: FontAwesome;
+}
+
+//headings
+.heading {
+    @include adjust-font-size-to(37px, 3.8);
+    font-weight:300;
+    margin:0 0 .3em;
+}
+
+.main-nav {
+    @include adjust-font-size-to(14px, 1.2);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.form__heading,
+.modal__heading {
+    @include adjust-font-size-to(24px);
+    color:$black-color;
+    border:none;
+    margin:0 0 .2em;
+    font-weight: 600;
+}
+
+.modal__heading {
+    margin:0;
+}
+
+//other
+.detail {
+    @include adjust-font-size-to(14px, .7);
+    color:$gray-color;
+    display:block;
+}
+
+.detail--tiny {
+    @include adjust-font-size-to(13px, .7);
+    margin-top:2em;
+    color:$gray-8-color;
+
+    a {
+        color:$gray-8-color;
+        text-decoration: underline;
+        .fa {
+            margin:0 4px;
+        }
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+}
+
+.brand-color {
+    color:$primary-color;
+}
+
+.light {
+    color:$gray-color;
+}
+
+.ui-match {
+    background: #FFFF73;
+  // font-weight: 600;
+    //color: $black-color;
+}

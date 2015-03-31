@@ -1,0 +1,125 @@
+.tooltip-inner {
+    background:$gray-color;
+    color:$white-color;
+
+    .list-group-item__action & {
+        white-space: nowrap;
+    }
+}
+
+.tooltip.top .tooltip-arrow {
+    border-top-color:$gray-color;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color:$gray-color;
+}
+
+.tooltip--help {
+    .fa-question-circle {
+        color:$gray-color;
+        position: relative;
+        top:1px;
+    }
+
+    .tooltip-inner {
+        background: $gray-color;
+    }
+
+    .bottom {
+        .tooltip-arrow {
+            border-bottom-color:$gray-color;
+        }
+    }
+}
+
+.tooltip-install {
+    opacity: 1;
+    display: none;
+    position: absolute;
+    bottom: -299px;
+    height: 300px;
+    width: 290px;
+    left: 1em;
+    background: transparent;
+
+    &.is-active {
+        display: block;
+    }
+
+    .tooltip__inner {
+        box-sizing: border-box;
+        background: white;
+        height: 270px;
+        width: 100%;
+        margin-top: 30px;
+        border-radius: 5px;
+        border: 3px solid #4e00ff;
+        position: relative;
+        text-align: center;
+        padding: 2em;
+
+        p,a {
+            display: block;
+            position: relative;
+        }
+
+        p {
+            @include adjust-font-size-to(15px, 0.9);
+            color: $black-color;
+            margin-bottom: 20px;
+        }
+
+        .lnk--blue {
+            margin-bottom: 20px;
+            @include adjust-font-size-to(12px, 0.3);
+            color: #4e00ff;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-align: left;
+
+            .fa {
+                margin-right: 9px;
+            }
+
+
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+
+        .btn--blue {
+            @include adjust-font-size-to(12px, 0.3);
+            text-align: center;
+            color: $white-color;
+            text-transform: uppercase;
+            font-weight: 600;
+            width: 100%;
+            padding: 1em 0em;
+            background: #4e00ff;
+            margin-bottom: 20px;
+        }
+
+        &:before {
+            @include cssArrow(5px, transparent, transparent, #4e00ff, transparent);
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: 25;
+            top: -13px;
+            left: 50%;
+            margin-left: -5px;
+        }
+
+        &:after {
+            @include cssArrow(5px, transparent, transparent, #fff, transparent);
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: 25;
+            top: -9px;
+            left: 50%;
+            margin-left: -5px;
+        }
+    }
+}

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>SupportHero</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+	
+	<link rel="stylesheet" href="assets/dependencies/libs/nprogress/nprogress.css">
+	<link rel="stylesheet" href="assets/dependencies/libs/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/stylesheets/modules/bootstrap.css">
+	<link rel="stylesheet" href="assets/stylesheets/support-hero.css">
+	<link rel="stylesheet" href="assets/stylesheets/custom.css">
+
+	<script src="assets/dependencies/libs/jquery/jquery.js" type="text/javascript"></script>
+	<script src="assets/dependencies/libs/underscore/underscore.js" type="text/javascript"></script>
+	<script src="assets/dependencies/libs/jquery-autosize/jquery.autosize.js" type="text/javascript"></script>
+	<script src="assets/dependencies/libs/jquery-ui/ui/jquery-ui.js" type="text/javascript"></script>
+	<script src="assets/dependencies/libs/bootstrap-file-input/bootstrap.file-input.js" type="text/javascript"></script>
+	<script src="assets/dependencies/libs/nprogress/nprogress.js" type="text/javascript"></script>
+	<script src="assets/dependencies/libs/smartresize/jquery.smartresize.js" type="text/javascript"></script>
+	<script src="assets/javascripts/supporthero.js" type="text/javascript"></script>
+	<script src="assets/javascripts/base.js" type="text/javascript"></script>
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body id="supportHeroController">
+
+	<header id="header">
+		<div class="navbar navbar-default">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="header__logo" href="index.html">
+						<img alt="Supporthero.io"
+						src="assets/images/support-hero-logo.svg"
+						height="27"
+						width="32" />
+					</a>
+					<div class="header__nav">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="index.html">
+									<i class="fa fa-home"></i>
+								</a>
+							</li>
+							<li>
+								<a href="content.html">
+									CONTENTS
+								</a>
+							</li>
+							<li class="is-active">
+								<a href="statistic.html">
+									STATISTICS
+								</a>
+							</li>
+							<li>
+								<a href="failedSearches.html">
+									FAILED SEARCHES
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="pull-right header__nav">
+						<ul class="nav pull-right navbar-nav">
+							<li>
+								<span class="lnk-drop" data-placement="bottom" data-animation="am-flip-x" data-template="signInPopover" data-bs-popover>
+									Sign in
+									<div class="signin-lnk__caret-wrapper">
+										<span class="fa fa-caret-down fa-1"></span>
+									</div>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div id="wrapper">
+		<div class="container">
+			<header class="header header--content">
+			    <div class="row">
+			        <div class="col-lg-10 col-md-10 col-xs-10">
+			            <div class="row">
+			                <div class="col-lg-3 col-md-3 col-xs-3 breadcrumb content__breadcrumb">
+			                    Overview
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</header>
+			<div class="row">
+			    <div class="col-lg-10 col-md-10 col-xs-10 stats__wrapper">
+			        <div class="row">
+			            <div class="col-lg-2 col-md-2 col-xs-10 sidebar sidebar--left sidebar--stats">
+			                <ul class="list list--menu">
+			                    <li class="list__item">
+			                        <a href="#" class="is-active">Dashboard</a>
+			                    </li>
+			                    <li class="list__item">
+			                        <a href="#">Content</a>
+			                    </li>
+			                    <li class="list__item">
+			                        <a href="#">Keywords</a>
+			                    </li>
+			                </ul>
+			            </div>
+			            <div class="col-lg-8 col-md-8 col-xs-10 stats__content">
+			                <div class="panel panel--white panel--stats">
+			                    <ul class="list list--stats list--primary-stats">
+			                        <li class="list__item">
+			                            <span class="stat-label">Tickets saved</span>
+			                            <a href="#"><span class="stat-value green">45</span></a>
+			                        </li>
+			                        <li class="list__item">
+			                            <span class="stat-label">Failed searches</span>
+			                            <a href="#"><span class="stat-value red">289</span></a>
+			                        </li>
+			                        <li class="list__item">
+			                            <span class="stat-label black">Widget opening</span>
+			                            <a href="#"><span class="stat-value black">20,345</span></a>
+			                        </li>
+			                    </ul>
+			                    <ul class="list list--stats list--secondary-stats">
+			                        <li class="list__item">
+			                            <span class="stat-label">Articles read</span>
+			                            <a href="#"><span class="stat-value black">712</span></a>
+			                        </li>
+			                        <li class="list__item">
+			                            <span class="stat-label grey">Searches</span>
+			                            <a href="#"><span class="stat-value grey">1289</span></a>
+			                        </li>
+			                    </ul>
+			                </div>
+			                <div class="panel panel--required-attention">
+			                    <div class="panel__heading">
+			                        <h2>FAQ articles requiring your attention</h2>
+			                        <a href="#" class="info">
+			                            <i class="fa fa-info-circle"></i>
+			                        </a>
+			                        <a href="#" class="view-all">
+			                            View all
+			                            <i class="fa fa-long-arrow-right"></i>
+			                        </a>
+			                    </div>
+			                    <table class="table table--data table--stats">
+			                        <thead>
+			                        <tr>
+			                            <th>
+			                                <a href="#">Articles<i class="fa fa-caret-down sort-icon"></i></a>
+			                            </th>
+			                            <th class="centered">
+			                                <a href="#">Article quality<i class="fa fa-caret-down sort-icon"></i></a>
+			                            </th>
+			                        </tr>
+			                        </thead>
+			                        <tbody>
+			                        <tr>
+			                            <td>
+			                                <i class="fa fa-file-text-o content-type__icon"></i>How many times can a participant enter an instant win campaign?
+			                            </td>
+			                            <td class="centered red">
+			                                -156
+			                            </td>
+			                        </tr>
+			                        <tr>
+			                            <td>
+			                                <i class="fa fa-file-text-o content-type__icon"></i>Can I export all the draw dates of all my Instant wins?
+			                            </td>
+			                            <td class="centered red">
+			                                -135
+			                            </td>
+			                        </tr>
+			                        <tr>
+			                            <td>
+			                                <i class="fa fa-file-text-o content-type__icon"></i>Is there any risk of winding up with the same winner twice in ...
+			                            </td>
+			                            <td class="centered red">
+			                                -80
+			                            </td>
+			                        </tr>
+			                        </tbody>
+			                    </table>
+			                </div>
+			                <div class="panel panel--failed">
+			                    <div class="panel__heading">
+			                        <h2>Failed searches</h2>
+			                        <a href="#" class="info">
+			                            <i class="fa fa-info-circle"></i>
+			                        </a>
+			                        <a href="#" class="view-all">
+			                            View all
+			                            <i class="fa fa-long-arrow-right"></i>
+			                        </a>
+			                    </div>
+			                    <table class="table table--data table--stats">
+			                        <thead>
+			                        <tr>
+			                            <!-- For what's coming underneath -->
+			                            <!-- The icon class depends on the way you sort the data -->
+			                            <!-- "fa-caret-up" for ascending sort  -->
+			                            <!-- "fa-caret-down" for descending sort -->
+			                            <!-- Only appears when "is-active" class is added to the <a> -->
+			                            <th>
+			                                <a href="#">Keywords<i class="fa fa-caret-down sort-icon"></i></a>
+			                            </th>
+			                            <th class="centered">
+			                                <a href="#"># of searches<i class="fa fa-caret-down sort-icon"></i></a>
+			                            </th>
+			                            <th class="centered">
+			                                <a href="#"># of failed searches<i class="fa fa-caret-down sort-icon"></i></a>
+			                            </th>
+			                        </tr>
+			                        </thead>
+			                        <tbody>
+			                        <tr>
+			                            <td>
+			                                <i class="fa fa-search content-type__icon"></i>campaign
+			                            </td>
+			                            <td class="centered value">
+			                                79
+			                            </td>
+			                            <td class="centered value">
+			                                79
+			                            </td>
+			                        </tr>
+			                        <tr>
+			                            <td>
+			                                <i class="fa fa-search content-type__icon"></i>Instant wins
+			                            </td>
+			                            <td class="centered value">
+			                                79
+			                            </td>
+			                            <td class="centered value">
+			                                79
+			                            </td>
+			                        </tr>
+			                        <tr>
+			                            <td>
+			                                <i class="fa fa-search content-type__icon"></i>comment fonctionne l'option de viralité sur le tirage au sort
+			                            </td>
+			                            <td class="centered value">
+			                                61
+			                            </td>
+			                            <td class="centered value">
+			                                61
+			                            </td>
+			                        </tr>
+			                        <tr>
+			                            <td>
+			                                <i class="fa fa-search content-type__icon"></i>Instant wins
+			                            </td>
+			                            <td class="centered value">
+			                                35
+			                            </td>
+			                            <td class="centered value">
+			                                35
+			                            </td>
+			                        </tr>
+			                        <tr>
+			                            <td>
+			                                <i class="fa fa-search content-type__icon"></i>dolor sit amet
+			                            </td>
+			                            <td class="centered value">
+			                                23
+			                            </td>
+			                            <td class="centered value">
+			                                23
+			                            </td>
+			                        </tr>
+			                        </tbody>
+			                    </table>
+			                </div>
+			                <div class="panel panel--popular">
+			                    <div class="panel__heading">
+			                        <h2>Popular searches</h2>
+			                        <a href="#" class="info">
+			                            <i class="fa fa-info-circle"></i>
+			                        </a>
+			                        <a href="#" class="view-all">
+			                            View all
+			                            <i class="fa fa-long-arrow-right"></i>
+			                        </a>
+			                    </div>
+			                    <table class="table table--data table--stats">
+			                        <thead>
+			                        <tr>
+			                            <!-- For what's coming underneath -->
+			                            <!-- The icon class depends on the way you sort the data -->
+			                            <!-- "fa-caret-up" for ascending sort  -->
+			                            <!-- "fa-caret-down" for descending sort -->
+			                            <!-- Only appears when "is-active" class is added to the <a> -->
+			                            <th>
+			                                <a href="#">Keywords<i class="fa fa-caret-down sort-icon"></i></a>
+			                            </th>
+			                            <th class="centered">
+			                                <a href="#"># of searches<i class="fa fa-caret-down sort-icon"></i></a>
+			                            </th>
+			                        </tr>
+			                        </thead>
+			                        <tbody>
+			                        <tr>
+			                            <td>
+			                                <i class="fa fa-search content-type__icon"></i>campaign
+			                            </td>
+			                            <td class="centered value">
+			                                79
+			                            </td>
+			                        </tr>
+			                        <tr>
+			                            <td>
+			                                <i class="fa fa-search content-type__icon"></i>Instant wins
+			                            </td>
+			                            <td class="centered value">
+			                                79
+			                            </td>
+			                        </tr>
+			                        <tr>
+			                            <td>
+			                                <i class="fa fa-search content-type__icon"></i>comment fonctionne l'option de viralité sur le tirage au sort
+			                            </td>
+			                            <td class="centered value">
+			                                61
+			                            </td>
+			                        </tr>
+			                        <tr>
+			                            <td>
+			                                <i class="fa fa-search content-type__icon"></i>Instant wins
+			                            </td>
+			                            <td class="centered value">
+			                                35
+			                            </td>
+			                        </tr>
+			                        <tr>
+			                            <td>
+			                                <i class="fa fa-search content-type__icon"></i>dolor sit amet
+			                            </td>
+			                            <td class="centered value">
+			                                23
+			                            </td>
+			                        </tr>
+			                        </tbody>
+			                    </table>
+			                </div>
+			                <div class="panel panel--failed">
+			                    <div class="panel__heading">
+			                        <h2>Most viewed articles</h2>
+			                    </div>
+			                    <div class="panel__content">
+			                        <h2>Available soon, it's on our roadmap.</h2>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+		
+		</div>
+	</div>
+
+
+<footer id="footer">
+	<div class="container">
+		<div class=" footer__inner">
+			<div>
+				<span>Support Hero Design</span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>

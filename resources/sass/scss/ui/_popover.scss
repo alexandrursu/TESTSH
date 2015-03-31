@@ -1,0 +1,31 @@
+.popover {
+    box-shadow:none;
+
+    .form-signin {
+        padding:25px 16px 20px;
+    }
+
+    .form-signin + .popover-footer {
+        margin:0 16px;
+        padding:10px 0;
+    }
+}
+
+.progress {
+    margin-bottom:0;
+}
+
+.popover-footer {
+    @include adjust-font-size-to(14px);
+    border-top:1px solid $gray3-color;
+
+    a {
+        color:$gray-color;
+        border-bottom:1px solid $gray-color;
+
+        &:hover,
+        &:focus {
+            border-color:transparent;
+        }
+    }
+}

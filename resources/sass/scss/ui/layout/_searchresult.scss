@@ -1,0 +1,33 @@
+
+.search-template {
+  border: 0.3em solid #e7e7e7;
+  background-color: $white-color;
+  padding: 0px;
+
+
+  .form-control {
+    border: none;
+    outline: none;
+
+    .input-group-btn  {
+      background-color: $gray-bg-1;
+
+    }
+  }
+  .btn-sample {
+    color: $primary-color;
+    background-color: $gray-bg-1;
+    cursor: pointer;
+    //border-color: none;
+  }
+
+  .btn {
+    padding: 0.375em 1.875em;
+  }
+
+
+}
+
+
+
+

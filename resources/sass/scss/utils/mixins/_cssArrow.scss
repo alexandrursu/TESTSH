@@ -1,0 +1,11 @@
+@mixin cssArrow($size, $color1, $color2, $color3, $color4){
+    display:inline-block;
+    content:'';
+    width:0;
+    height:0;
+    border: $size solid transparent;
+    border-top-color: $color1;
+    border-right-color: $color2;
+    border-bottom-color: $color3;
+    border-left-color: $color4;
+}

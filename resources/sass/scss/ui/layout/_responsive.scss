@@ -1,0 +1,51 @@
+// @media (max-width: 1024px) {
+//     #header {
+//         .popover {
+//             left:-244px !important; //override js
+
+//             .arrow {
+//                 left:auto;
+//                 margin-left: 0;
+//                 right:32px;
+//             }
+//         }
+//     }
+// }
+
+@media (max-width: 767px) {
+    #header {
+        // margin-left:-20px;
+        // margin-right:-20px;
+    }
+
+    .modal {
+        margin:0;
+    }
+}
+
+@media (max-width: 400px) {
+    .popover-content {
+        .form-signin {
+            width:240px;
+        }
+    }
+
+    #header {
+        .popover {
+            left:-204px !important; //override js
+
+             .arrow {
+                right: 43px;
+             }
+        }
+    }
+
+    .list-group-tutorial-item__heading--category{
+        display: block;
+    }
+
+    .list-group-tutorial-item__heading--view-more{
+        margin-left: 0px;
+    }
+}
+

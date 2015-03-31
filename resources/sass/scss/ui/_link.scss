@@ -1,0 +1,27 @@
+.lnk-drop {
+    cursor:pointer;
+    
+    .fa {
+        font-size:80%;
+    }
+}
+
+.lnk-tooltip {
+    color:$gray-color;
+    cursor:pointer;
+
+    &:hover {
+        color:$primary-color;
+    }
+}
+
+.lnk-external {
+    @include adjust-font-size-to(13px);
+    color:$gray-color;
+
+    &:hover,
+    &:focus {
+        color:$primary-color;
+        text-decoration:none;
+    }
+}

@@ -1,0 +1,329 @@
+.modal {
+    border-color:$gray2-color;
+    border-radius:0;
+    //max-width:516px;
+    width:auto;
+    //margin-left:-258px;
+    box-shadow: 0 0 6px rgba($black-color, .15);
+
+    form {
+        margin:0 0 20px;
+    }
+
+    .close {
+        @include adjust-font-size-to(22px);
+        top: 0.2em;
+        right: 0.6em;
+        position: absolute;
+    }
+}
+
+.modal-backdrop {
+    @include opacity(.75);
+    background-color:$white-color;
+}
+
+.modal-body {
+    padding:30px 30px 0;
+}
+
+.modal-progress {
+    margin:0 30px 30px;
+}
+
+.modal-header {
+    padding:15px 30px;
+    border-bottom-color: $darken-border;
+}
+
+.modal-footer {
+    padding:20px 30px;
+    margin:0;
+    border-top-color:$border-color;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.modal--grey {
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px;
+
+    .modal-dialog {
+        border: 1px solid $gray2-color;
+    }
+
+    .modal-header {
+        border-bottom: 0px;
+        padding: 2em 2em;
+
+        h4 {
+            @include adjust-font-size-to(30px);
+            font-weight: 500;
+        }
+    }
+
+    .modal-body {
+        margin: 0 2em 0 2em;
+        padding: 2em;
+        background: $gray-5-color;
+    }
+
+    .modal-content {
+        border-radius: 0px;
+        border: 9px solid $gray-5-color;
+        box-shadow: none;
+    }
+
+    .form--modal {
+        margin: 0 0 0px;
+    }
+
+    .link {
+        width: 4px;
+        content: '';
+        background: $primary-color;
+        position: absolute;
+        left: 23px;
+        bottom: 49px;
+        top: 84px;
+    }
+
+    .modal-footer {
+        border-top: none;
+
+        &.form-actions {
+            .btn-save {
+                background: $gray-8-color;
+                color: $white-color;
+            }
+
+            .btn-cancel {
+                color: $gray-8-color;
+                background: $white-color;
+                border: 0px;
+            }
+        }
+    }
+
+    .form--view__item{
+        input[type="radio"] {
+            border: 1px solid darken($darken-border, 20);
+        }
+    }
+
+    &.modal--std {
+        .modal-body {
+            margin: 0px;
+            padding: 2em 2em 0em 2em;
+            background: $gray-bg-1;
+            position: relative;
+
+            .form--free__actions__switch-wrapper {
+                width: 155px;
+            }
+        }
+
+        .modal-header {
+            // padding: 0 0 2em 0;
+            padding: 0;
+            margin-bottom: 2em;
+        }
+
+        .switch__wrapper {
+            display: inline-block;
+            float: none;
+            // Displaying hack
+            margin-bottom: -6px;
+            // margin-top: -6px;
+        }
+
+        .form--large {
+            .control-label {
+                @include adjust-font-size-to(18px, 0.6);
+                display: block;
+                font-weight: 600;
+                margin-bottom: 1em;
+            }
+        }
+
+        .help-block {
+            margin-bottom: 0px;
+            margin-top: 0px;
+        }
+
+        .form-group {
+            margin-bottom: 2em;
+        }
+
+        .form--free__actions__switch-wrapper {
+            position: absolute;
+            top: 2em;
+            right: 2em;
+        }
+
+        .modal-footer {
+            padding-top: 0;
+            background: $gray-bg-1;
+        }
+    }
+}
+
+.modal--thin {
+    .modal-content {
+        padding: 6em 4.5em;
+    }
+
+    .modal-header {
+        padding: 0;
+        margin-bottom: 2em;
+
+        h2 {
+            @include adjust-font-size-to(21px, .9);
+            text-transform: uppercase;
+            color: $font-color;
+            text-align: center;
+            margin: 0;
+        }
+    }
+
+    .modal-body {
+        padding: 0;
+        background: $white-color;
+        text-align: center;
+        margin: 0;
+
+        .btn--import {
+            &:first-child {
+                margin-bottom: 3em;
+            }
+        }
+
+        p {
+            @include adjust-font-size-to(19px, 1.3);
+            color: $gray-8-color;
+            font-weight: 300;
+            margin-bottom: 2em;
+        }
+    }
+}
+
+.modal--bigger {
+    .modal-content {
+        padding: 4em;
+        position: relative;
+
+        .close-modal{
+            position: absolute;
+            top: 1em;
+            right: 1em;
+            @include adjust-leading-to(0.5);
+
+            .fa {
+                color: $gray-8-color;
+            }
+        }
+    }
+
+    .form-textarea {
+        width: 100%;
+        display: block;
+        margin-bottom: 3em;
+        padding: 0 0.5em;
+
+        .textarea--modal {
+            width: 100%;
+            height: 105px;
+            border-radius: 3px;
+            border: 1px solid $gray2-color;
+            background: #f3f3f3;
+            color: $gray-color;
+            padding: 1.25em;
+            margin: 0;
+            resize: none;
+        }
+    }
+
+    .modal-header {
+        padding: 0;
+        text-align: center;
+        margin-bottom: 3em;
+
+        .modal__heading {
+            @include adjust-font-size-to(27px, 2);
+        }
+    }
+
+    .modal-body {
+        padding: 0;
+        background: $white-color;
+        text-align: center;
+        margin: 0;
+
+        p {
+            @include adjust-font-size-to(19px, 1.3);
+            color: $font-color;
+            font-weight: 300;
+            margin-bottom: 2em;
+        }
+    }
+
+    .modal-btn-group {
+        margin-bottom: 3em;
+
+        .btn{
+            padding: 0.8em 0em;
+            width: 223px;
+            margin-bottom: 1.25em;
+
+            &:first-child {
+                margin-right: 0.65em;
+            }
+        }
+
+        p {
+            @include adjust-font-size-to(18px, 0.8);
+            display: block;
+            color: $font-color;
+            font-weight: 300;
+            margin-bottom: 0px;
+
+            a {
+                color: $primary-color;
+                border-bottom: 1px solid $primary-color;
+            }
+        }
+    }
+
+    .modal-footer {
+        text-align: center;
+        padding: 0;
+
+        p {
+            @include adjust-font-size-to(18px, 1.2);
+            color: $font-color;
+            font-weight: 300;
+            margin-bottom: 0px;
+        }
+
+    }
+}
+
+.modal--preview {
+    .modal-body {
+        padding: 0px;
+    }
+
+    .modal-header {
+        .modal__heading{
+            @include adjust-font-size-to(20px, 0.8);
+            text-transform: uppercase;
+        }
+    }
+
+    .modal-actions {
+        position: absolute;
+        top: 1.25em;
+        right: 2em;
+    }
+}

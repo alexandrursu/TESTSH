@@ -1,0 +1,98 @@
+    .panel-group {
+        margin-bottom: 0;
+    }
+
+    .panel .panel-default {
+        border:none;
+        margin:0;
+
+        .list-group-item__action {
+            top:.8em;
+        }
+    }
+
+    .panel {
+        &.collapsed {
+            .accordion-toggle {
+                background: $white-color;
+                font-weight:normal;
+                color:$font-color;
+                // padding-top: .8em;
+                // padding-bottom: .8em;
+
+                .list-group__toogle {
+                    color:$gray-color;
+                }
+
+                &:hover {
+                    color:$primary-color;
+
+                    .list-group__toogle {
+                      color:$primary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .accordion-heading{
+        border-bottom: 0;
+
+        .content-type__icon{
+            margin-right: 5px;
+            color: $gray-color;
+        }
+    }
+
+    .accordion-toggle:hover,
+    .accordion-toggle:focus {
+        cursor: pointer;
+
+        .list-group__toogle {
+            color:$primary-color;
+        }
+    }
+
+    .accordion-toggle {
+        @include adjust-font-size-to(15px);
+        // background-color: $list-hover-color;
+        // font-weight:700;
+        color:$black-color;
+        padding-top: .8em;
+        padding-bottom: .8em;
+
+        .list-group__toogle {
+            font-size:90%;
+            margin-left:-22px;
+            margin-right:6px;
+        }
+    }
+
+    .panel-collapse {
+        background-color: $list-hover-color;
+        // border-top: 1px solid #ededed;
+        padding-right:1.9em;
+    }
+
+    .panel-external {
+        padding:3px 0;
+    }
+
+    .panel-body {
+        border:none;
+        padding:0px 0 0;
+
+        text-align:justify;
+        .content p{
+            @include adjust-font-size-to(14px);
+            padding-left: 1.2em;
+        }
+    }
+
+.panel-heading {
+    &:hover {
+        .list-group-item__action {
+            @include opacity(1);
+        }
+    }
+}
