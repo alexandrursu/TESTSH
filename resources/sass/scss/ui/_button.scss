@@ -245,9 +245,9 @@
 }
 
 .btn--add{
-    @include adjust-font-size-to(11px, 0.6);
+    @include adjust-font-size-to(12px, 0.6);
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: normal;
     color: $primary-color;
     border: 1px solid $primary-color;
     height: 33px;

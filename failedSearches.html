@@ -29,7 +29,7 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.min.js"></script>
 	<![endif]-->
 </head>
-<body id="supportHeroController">
+<body id="supportHeroController" ng-app="failedSearch">
 
 	<header id="header">
 		<div class="navbar navbar-default">
@@ -162,7 +162,7 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 										</ul>
 									</div>
 									<div class="col-lg-8 col-md-8 col-xs-10 stats__content">
-										<table class="table table--data table--stats table--stats--full keywords">
+										<table class="table table--data table--stats table--stats--full keywords tickets--list">
 											<thead>
 												<tr>
 														<th>
@@ -186,15 +186,12 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 																Task
 															</a>
 														</th>
-														<th class="action-column">
-															<a href="#">&nbsp;</a>
-														</th>
 													</tr>
 												</thead>
-												<tbody data-ng-repeat="item in results" data-ng-if="results.length > 0" class="ng-scope">
+												<tbody ng-controller="CollapseDemoCtrl" data-ng-repeat="item in results" data-ng-if="results.length > 0" class="ng-scope">
 													<tr>
-														<td data-ng-click="toggle(item)" class="ng-binding">
-															test
+														<td data-ng-click="toggle(item)" class="ng-binding no__tickets">
+                                                             i don't want the number of votes to be seen by voters
 														</td>
 
 														<td class="centered value">
@@ -212,18 +209,15 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 														<td class="centered value">
 															<!-- ngIf: item.tasksCount > 0 -->
 															<!-- ngIf: item.tasksCount == 0 --><a href="#" data-ng-if="item.tasksCount == 0" class="btn btn--add ng-scope" data-ng-click="showModal('statistic.editTaskModal', {searchTerm: item.searchTerm, isNew: true})">
-																<i class="fa fa-plus"></i>ADD TASK
-															</a><!-- end ngIf: item.tasksCount == 0 -->
-														</td>
-														<td class="centered value">
-															<i class="fa fa-trash-o content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"></i>
+																<i class="fa fa-plus"></i>ADD TASK<i class="fa fa-times content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"><span href="#" data-tool="delete this search" class="new-tooltip animate-tooltip ">a</span></i></a>
+                                                            <!-- end ngIf: item.tasksCount == 0 -->
 														</td>
 													</tr>
 												</tbody>
 												<tbody data-ng-repeat="item in results" data-ng-if="results.length > 0" class="ng-scope">
 													<tr>
-														<td data-ng-click="toggle(item)" class="ng-binding">
-															test
+														<td data-ng-click="toggle(item)" class="ng-binding has__tickets">
+                                                             test
 														</td>
 
 														<td class="centered value">
@@ -238,20 +232,17 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 															</a><!-- end ngIf: item.ticketsCount > 0 -->
 															<!-- ngIf: item.ticketsCount == 0 -->
 														</td>
-														<td class="centered value">
-															<!-- ngIf: item.tasksCount > 0 -->
-															<!-- ngIf: item.tasksCount == 0 --><a href="#" data-ng-if="item.tasksCount == 0" class="btn btn--add ng-scope" data-ng-click="showModal('statistic.editTaskModal', {searchTerm: item.searchTerm, isNew: true})">
-																<i class="fa fa-plus"></i>ADD TASK
-															</a><!-- end ngIf: item.tasksCount == 0 -->
-														</td>
-														<td class="centered value">
-															<i class="fa fa-trash-o content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"></i>
-														</td>
+                                                        <td class="centered value">
+                                                            <!-- ngIf: item.tasksCount > 0 -->
+                                                            <!-- ngIf: item.tasksCount == 0 --><a href="#" data-ng-if="item.tasksCount == 0" class="btn btn--add ng-scope" data-ng-click="showModal('statistic.editTaskModal', {searchTerm: item.searchTerm, isNew: true})">
+                                                            <i class="fa fa-plus"></i>ADD TASK<i class="fa fa-times content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"><span href="#" data-tool="delete this search" class="new-tooltip animate-tooltip ">a</span></i></a>
+                                                            <!-- end ngIf: item.tasksCount == 0 -->
+                                                        </td>
 													</tr>
 												</tbody><!-- end ngIf: results.length > 0 --><!-- end ngRepeat: item in results --><!-- ngIf: results.length > 0 --><tbody data-ng-repeat="item in results" data-ng-if="results.length > 0" class="ng-scope">
 													<tr>
-														<td data-ng-click="toggle(item)" class="ng-binding">
-															test
+														<td data-ng-click="toggle(item)" class="ng-binding has__tickets">
+                                                            test
 														</td>
 
 														<td class="centered value">
@@ -266,20 +257,17 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 															</a><!-- end ngIf: item.ticketsCount > 0 -->
 															<!-- ngIf: item.ticketsCount == 0 -->
 														</td>
-														<td class="centered value">
-															<!-- ngIf: item.tasksCount > 0 -->
-															<!-- ngIf: item.tasksCount == 0 --><a href="#" data-ng-if="item.tasksCount == 0" class="btn btn--add ng-scope" data-ng-click="showModal('statistic.editTaskModal', {searchTerm: item.searchTerm, isNew: true})">
-																<i class="fa fa-plus"></i>ADD TASK
-															</a><!-- end ngIf: item.tasksCount == 0 -->
-														</td>
-														<td class="centered value">
-															<i class="fa fa-trash-o content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"></i>
-														</td>
+                                                        <td class="centered value">
+                                                            <!-- ngIf: item.tasksCount > 0 -->
+                                                            <!-- ngIf: item.tasksCount == 0 --><a href="#" data-ng-if="item.tasksCount == 0" class="btn btn--add ng-scope" data-ng-click="showModal('statistic.editTaskModal', {searchTerm: item.searchTerm, isNew: true})">
+                                                            <i class="fa fa-plus"></i>ADD TASK<i class="fa fa-times content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"><span href="#" data-tool="delete this search" class="new-tooltip animate-tooltip ">a</span></i></a>
+                                                            <!-- end ngIf: item.tasksCount == 0 -->
+                                                        </td>
 													</tr>
 												</tbody><!-- end ngIf: results.length > 0 --><!-- end ngRepeat: item in results --><!-- ngIf: results.length > 0 --><tbody data-ng-repeat="item in results" data-ng-if="results.length > 0" class="ng-scope">
 													<tr>
-														<td data-ng-click="toggle(item)" class="ng-binding">
-															test
+														<td data-ng-click="toggle(item)" class="ng-binding has__tickets">
+                                                            test
 														</td>
 
 														<td class="centered value">
@@ -294,20 +282,17 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 															</a><!-- end ngIf: item.ticketsCount > 0 -->
 															<!-- ngIf: item.ticketsCount == 0 -->
 														</td>
-														<td class="centered value">
-															<!-- ngIf: item.tasksCount > 0 -->
-															<!-- ngIf: item.tasksCount == 0 --><a href="#" data-ng-if="item.tasksCount == 0" class="btn btn--add ng-scope" data-ng-click="showModal('statistic.editTaskModal', {searchTerm: item.searchTerm, isNew: true})">
-																<i class="fa fa-plus"></i>ADD TASK
-															</a><!-- end ngIf: item.tasksCount == 0 -->
-														</td>
-														<td class="centered value">
-															<i class="fa fa-trash-o content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"></i>
-														</td>
+                                                        <td class="centered value">
+                                                            <!-- ngIf: item.tasksCount > 0 -->
+                                                            <!-- ngIf: item.tasksCount == 0 --><a href="#" data-ng-if="item.tasksCount == 0" class="btn btn--add ng-scope" data-ng-click="showModal('statistic.editTaskModal', {searchTerm: item.searchTerm, isNew: true})">
+                                                            <i class="fa fa-plus"></i>ADD TASK<i class="fa fa-times content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"><span href="#" data-tool="delete this search" class="new-tooltip animate-tooltip ">a</span></i></a>
+                                                            <!-- end ngIf: item.tasksCount == 0 -->
+                                                        </td>
 													</tr>
 												</tbody><!-- end ngIf: results.length > 0 --><!-- end ngRepeat: item in results --><!-- ngIf: results.length > 0 --><tbody data-ng-repeat="item in results" data-ng-if="results.length > 0" class="ng-scope">
 													<tr>
-														<td data-ng-click="toggle(item)" class="ng-binding">
-															test
+														<td data-ng-click="toggle(item)" class="ng-binding has__tickets">
+                                                            test
 														</td>
 
 														<td class="centered value">
@@ -322,20 +307,17 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 															</a><!-- end ngIf: item.ticketsCount > 0 -->
 															<!-- ngIf: item.ticketsCount == 0 -->
 														</td>
-														<td class="centered value">
-															<!-- ngIf: item.tasksCount > 0 -->
-															<!-- ngIf: item.tasksCount == 0 --><a href="#" data-ng-if="item.tasksCount == 0" class="btn btn--add ng-scope" data-ng-click="showModal('statistic.editTaskModal', {searchTerm: item.searchTerm, isNew: true})">
-																<i class="fa fa-plus"></i>ADD TASK
-															</a><!-- end ngIf: item.tasksCount == 0 -->
-														</td>
-														<td class="centered value">
-															<i class="fa fa-trash-o content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"></i>
-														</td>
+                                                        <td class="centered value">
+                                                            <!-- ngIf: item.tasksCount > 0 -->
+                                                            <!-- ngIf: item.tasksCount == 0 --><a href="#" data-ng-if="item.tasksCount == 0" class="btn btn--add ng-scope" data-ng-click="showModal('statistic.editTaskModal', {searchTerm: item.searchTerm, isNew: true})">
+                                                            <i class="fa fa-plus"></i>ADD TASK<i class="fa fa-times content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"><span href="#" data-tool="delete this search" class="new-tooltip animate-tooltip ">a</span></i></a>
+                                                            <!-- end ngIf: item.tasksCount == 0 -->
+                                                        </td>
 													</tr>
 												</tbody><!-- end ngIf: results.length > 0 --><!-- end ngRepeat: item in results --><!-- ngIf: results.length > 0 --><tbody data-ng-repeat="item in results" data-ng-if="results.length > 0" class="ng-scope">
-													<tr>
-														<td data-ng-click="toggle(item)" class="ng-binding">
-															test
+													<tr class="accordion">
+														<td data-ng-click="toggle(item)" class="ng-binding has__tickets">
+                                                            see your campaign before goes live
 														</td>
 
 														<td class="centered value">
@@ -346,23 +328,65 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 														</td>
 														<td class="centered value">
 															<a href="#" data-ng-if="item.ticketsCount > 0" class="action-link ng-binding ng-scope" data-ng-click="toggle(item)">
-																VIEW 1 TICKETS
+																VIEW 3 TICKETS
 															</a>
 														</td>
-														<td class="centered value">
-															<a href="#" data-ng-if="item.tasksCount == 0" class="btn btn--add ng-scope" data-ng-click="showModal('statistic.editTaskModal', {searchTerm: item.searchTerm, isNew: true})">
-																<i class="fa fa-plus"></i>ADD TASK
-															</a>
-														</td>
-														<td class="centered value">
-															<i class="fa fa-trash-o content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"></i>
-														</td>
-													</tr>
+                                                        <td class="centered value">
+                                                            <!-- ngIf: item.tasksCount > 0 -->
+                                                            <!-- ngIf: item.tasksCount == 0 --><a href="#" data-ng-if="item.tasksCount == 0" class="btn btn--add ng-scope" data-ng-click="showModal('statistic.editTaskModal', {searchTerm: item.searchTerm, isNew: true})">
+                                                            <i class="fa fa-plus"></i>ADD TASK<i class="fa fa-times content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"><span href="#" data-tool="delete this search" class="new-tooltip animate-tooltip ">a</span></i></a>
+                                                            <!-- end ngIf: item.tasksCount == 0 -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="accordion-items">
+                                                        <td class="item" colspan="5">
+                                                            <dl class="accordion-items">
+                                                                <dd class="has__tickets">
+                                                                    Task :  <span class="editable__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy volutpat.
+                                                                                <a href="#"> <i class="fa fa-pencil lnk-tooltip"></i></a>
+                                                                                <a href="#"><i class="fa fa-trash-o lnk-tooltip"></i></a>
+                                                                            </span>
+                                                                    <div class="ticket-checkbox checkbox__not__reviewed">
+                                                                        <input id="checkbox1" class=" field-checkbox" type="checkbox"><label> Mark as done</label>
+                                                                    </div>
+                                                                </dd>
+                                                                <dd class="has__tickets">
+                                                                    Ticket #546 <span class="date-stamp">- Dec 11, 2014 - 10:06 AM</span>
+                                                                    <div class="ticket-checkbox">
+                                                                        <input id="checkbox2" class=" field-checkbox" type="checkbox"><label> Mark as done</label>
+                                                                    </div>
+                                                                </dd>
+                                                                <dd class="has__tickets has__tickets__expended">
+                                                                    Ticket #546 <span class="date-stamp">- Dec 11, 2014 - 10:06 AM</span>
+                                                                    <div class="ticket-checkbox">
+                                                                        <input id="checkbox3" class="field-checkbox" type="checkbox" checked><label> Reviewed</label>
+                                                                    </div>
+                                                                    <ul>
+                                                                        <li>What do you need help with? : I have a question about a feature</li>
+                                                                        <li>Searched text : partager une page</li>
+                                                                        <li>Helpful result : No</li>
+                                                                        <li>Does it concern a Facebook Page or a Twitter account? : It is Facebook related feature</li>
+                                                                        <li>What is your Facebook page? : Santé Pratique Paris</li>
+                                                                        <li>What Facebook related feature do you need help with? : Facebook fan management</li>
+                                                                        <li>What's your preferred language? : French</li>
+                                                                        <li>Email : m.palmowski@eurokapi.fr</li>
+                                                                    </ul>
+                                                                    <blockquote>
+                                                                        DESCRIPTION : Bonjour, Pouvez-vous me confirmer que la souscription se fait pour une seule page (en l'occurence dans mon cas je soula page Santé Pratique) et que par conséquent, si un autre administrateur doit avoir accès à la page via agorapulse, il aura uniquementson compte et ne rien payer ? Merci par avance de votre retour, Manon Palmowski
+                                                                    </blockquote>
+                                                                    <p>Browser :unknown - Device :  - IP Address : 172.31.9.229 - OS :unknown</p>
+                                                                    <p>URL :<a href="https://manager.agorapulse.com/facebook/page/dashboard/69050">https://manager.agorapulse.com/facebook/page/dashboard/69050</a></p>
+
+                                                                </dd>
+                                                            </dl>
+
+                                                        </td>
+                                                    </tr>
 												</tbody>
 												<tbody data-ng-repeat="item in results" data-ng-if="results.length > 0" class="ng-scope">
 													<tr>
-														<td data-ng-click="toggle(item)" class="ng-binding">
-															test
+														<td data-ng-click="toggle(item)" class="ng-binding no__tickets">
+                                                            test
 														</td>
 
 														<td class="centered value">
@@ -375,20 +399,18 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 																NO TICKETS
 															</span>
 														</td>
-														<td class="centered value">
-															<a href="#" data-ng-if="item.tasksCount == 0" class="btn btn--add ng-scope" data-ng-click="showModal('statistic.editTaskModal', {searchTerm: item.searchTerm, isNew: true})">
-																<i class="fa fa-plus"></i>ADD TASK
-															</a>
-														</td>
-														<td class="centered value">
-															<i class="fa fa-trash-o content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"></i>
-														</td>
+                                                        <td class="centered value">
+                                                            <!-- ngIf: item.tasksCount > 0 -->
+                                                            <!-- ngIf: item.tasksCount == 0 --><a href="#" data-ng-if="item.tasksCount == 0" class="btn btn--add ng-scope" data-ng-click="showModal('statistic.editTaskModal', {searchTerm: item.searchTerm, isNew: true})">
+                                                            <i class="fa fa-plus"></i>ADD TASK<i class="fa fa-times content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"><span href="#" data-tool="delete this search" class="new-tooltip animate-tooltip ">a</span></i></a>
+                                                            <!-- end ngIf: item.tasksCount == 0 -->
+                                                        </td>
 													</tr>
 												</tbody>
 												<tbody data-ng-repeat="item in results" data-ng-if="results.length > 0" class="ng-scope">
 													<tr>
-														<td data-ng-click="toggle(item)" class="ng-binding">
-															mars
+														<td data-ng-click="toggle(item)" class="ng-binding has__tickets">
+                                                            mars
 														</td>
 
 														<td class="centered value">
@@ -401,19 +423,18 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 																VIEW 1 TICKETS
 															</a>
 														</td>
-														<td class="centered value"><a href="#" data-ng-if="item.tasksCount == 0" class="btn btn--add ng-scope" data-ng-click="showModal('statistic.editTaskModal', {searchTerm: item.searchTerm, isNew: true})">
-																<i class="fa fa-plus"></i>ADD TASK
-															</a>
-														</td>
-														<td class="centered value">
-															<i class="fa fa-trash-o content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"></i>
-														</td>
+                                                        <td class="centered value">
+                                                            <!-- ngIf: item.tasksCount > 0 -->
+                                                            <!-- ngIf: item.tasksCount == 0 --><a href="#" data-ng-if="item.tasksCount == 0" class="btn btn--add ng-scope" data-ng-click="showModal('statistic.editTaskModal', {searchTerm: item.searchTerm, isNew: true})">
+                                                            <i class="fa fa-plus"></i>ADD TASK<i class="fa fa-times content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"><span href="#" data-tool="delete this search" class="new-tooltip animate-tooltip ">a</span></i></a>
+                                                            <!-- end ngIf: item.tasksCount == 0 -->
+                                                        </td>
 													</tr>
 												</tbody>
 												<tbody>
 													<tr>
-														<td data-ng-click="toggle(item)" class="ng-binding">
-															canva
+														<td data-ng-click="toggle(item)" class="ng-binding no__tickets">
+                                                            canva
 														</td>
 
 														<td class="centered value">
@@ -426,20 +447,18 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 																NO TICKETS
 															</span>
 														</td>
-														<td class="centered value">
-															<a href="#">
-																<i class="fa fa-hand-o-right"></i>&nbsp; View task
-															</a>
-														</td>
-														<td class="centered value">
-															<i class="fa fa-trash-o content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"></i>
-														</td>
+                                                        <td class="centered value">
+                                                            <!-- ngIf: item.tasksCount > 0 -->
+                                                            <!-- ngIf: item.tasksCount == 0 --><a href="#" data-ng-if="item.tasksCount == 0" class="btn btn--add ng-scope" data-ng-click="showModal('statistic.editTaskModal', {searchTerm: item.searchTerm, isNew: true})">
+                                                            <i class="fa fa-plus"></i>ADD TASK<i class="fa fa-times content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"><span href="#" data-tool="delete this search" class="new-tooltip animate-tooltip ">a</span></i></a>
+                                                            <!-- end ngIf: item.tasksCount == 0 -->
+                                                        </td>
 													</tr>
 												</tbody>
 												<tbody class="ng-scope">
 													<tr>
-														<td  class="ng-binding">
-															video
+														<td  class="ng-binding has__tickets">
+                                                            video
 														</td>
 
 														<td class="centered value">
@@ -452,14 +471,12 @@ xmlns:fb="https://www.facebook.com/2008/fbml">
 																VIEW 1 TICKETS
 															</a>
 														</td>
-														<td class="centered value">
-															<a href="#" class="btn btn--add ng-scope">
-																<i class="fa fa-plus"></i>ADD TASK
-															</a>
-														</td>
-														<td class="centered value">
-															<i class="fa fa-trash-o content-type__icon list-group-item__action list-group-item-trash__action"></i>
-														</td>
+                                                        <td class="centered value">
+                                                            <!-- ngIf: item.tasksCount > 0 -->
+                                                            <!-- ngIf: item.tasksCount == 0 --><a href="#" data-ng-if="item.tasksCount == 0" class="btn btn--add ng-scope" data-ng-click="showModal('statistic.editTaskModal', {searchTerm: item.searchTerm, isNew: true})">
+                                                            <i class="fa fa-plus"></i>ADD TASK<i class="fa fa-times content-type__icon list-group-item__action list-group-item-trash__action" data-ng-click="deleteSearchEvents(item.searchTerm, $event)"><span href="#" data-tool="delete this search" class="new-tooltip animate-tooltip ">a</span></i></a>
+                                                            <!-- end ngIf: item.tasksCount == 0 -->
+                                                        </td>
 													</tr>
 												</tbody>
 											</table>

@@ -123,3 +123,64 @@
         }
     }
 }
+
+/** tooltip styles
+  * based on http://www.flatypo.net/tutorials/how-to-create-animated-tooltips-css3-hiperlink/
+ **/
+span.new-tooltip{
+  display: inline;
+  position: absolute;
+  color: $transparent;
+  left: 0;
+  height: 100%;
+  width:100%;
+  bottom: 3px;
+
+  &:after{
+    @include adjust-font-size-to(13px, 0.6);
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    bottom: 3px ;
+    left: -60px;
+    opacity: 0;
+    content: attr(data-tool); /* might also use attr(title) */
+    height: auto;
+    min-width: 125px;
+    padding: 12px 9px;
+    z-index: 999;
+    color: $black-color;
+    text-decoration: none;
+    text-align: center;
+    background: $list-hover-color;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid $gray2-color;
+    font-family: "proxima-nova", Arial, sans-serif;
+    text-transform: lowercase;
+  }
+
+  &:before {
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    left: 0;
+    bottom: 3px;
+    opacity: 0;
+    content: "";
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: $gray2-color $transparent $transparent $transparent;
+  }
+
+  &:hover:after{ visibility: visible; opacity: 1; bottom: 20px; }
+  &:hover:before{ visibility: visible; opacity: 1; bottom: 14px; }
+
+  .animate-tooltip:after,.animate-tooltip:before {
+    @include transition (all 0.2s ease-in-out);
+  }
+
+}
+

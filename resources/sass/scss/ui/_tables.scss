@@ -64,9 +64,15 @@
                     }
 
                     td:first-child,
-                    td:last-child,
-                    .content-type__icon{
+                    td:last-child{
                         color: $primary-color;
+                    }
+
+                    &.accordion-items{
+                        td:first-child,
+                        td:last-child {
+                              color: $black-color;
+                        }
                     }
                 }
 
@@ -78,13 +84,96 @@
                     }
                 }
 
-                td {
-                    &.centered {
-                        a {
-                            &.action-link {
-                                border-bottom: 2px solid;
-                            }
+                  td {
+                      &.centered {
+                          a {
+                              &.action-link {
+                                  border-bottom: 2px solid;
+                              }
+                          }
+                      }
+                      &.has__tickets,
+                      &.no__tickets,
+                       .has__tickets,
+                       .no__tickets {
+                          &:hover{
+                            cursor: pointer;
                         }
+                      }
+
+                      &.has__tickets:before,
+                       .has__tickets:before{
+                        content: "\f0fe";
+                        font-family: FontAwesome;
+                        margin: 0 0.4em 0 0.4em;
+                        color: $primary-color;
+                      }
+
+                       dd.has__tickets {
+                          color:$primary-color;
+
+
+
+                         .editable__description {
+                           @include adjust-font-size-to(14px, 0.6);
+                           color: $black-color;
+                           i {
+                             margin-left: 0.5em;
+                           }
+                         }
+                       }
+                       dd.has__tickets__expended {
+                        color:$black-color;
+                        padding-bottom: 1.55em;
+
+                       ul {
+                         padding: 1.55em 2.35em;
+                       }
+
+                       blockquote {
+                         padding: 0em 1.5em;
+                         border: none;
+                         font-size: inherit;
+                       }
+
+                       p {
+                         padding: 0em 1.5em;
+                         margin: 0;
+                       }
+
+                       
+                       a {
+                         border-bottom: 1px solid $link-underline;
+                         color: $primary-color;
+                       }
+
+                     }
+
+                     &.has__tickets__expended:before,
+                      .has__tickets__expended:before {
+                       color: $black-color;
+                       content: "\f146";
+                     }
+
+                    &.no__tickets:before {
+                      content: "\f0fe";
+                      font-family: FontAwesome;
+                      color:$transparent;
+                      margin: 0 0.4em 0 0.4em;
+                    }
+
+                    span.date-stamp{
+                      color:$gray-color;
+                      @include adjust-font-size-to(13px, 0.6);
+                    }
+
+                    .view-task {
+                      @include adjust-font-size-to(12px, 0.6);
+                      color: $gray-color;
+
+                      &:hover {
+                        border-bottom: 1px solid $gray-color;
+                      }
                     }
                 }
             }
@@ -276,7 +365,10 @@
 
         .value--results {
             .fa {
-                color: $primary-color;
+                color: $gray-color;
+                &:hover {
+                  color:$primary-color;
+                }
             }
         }
         .value--no-results {
@@ -393,13 +485,29 @@
     }
 
     tbody{
+      background: $white-color;
 
         tr {
             @include adjust-font-size-to(16px, .8);
-            background: $white-color;
             border-top: 1px solid $gray3-color;
             border-bottom: 1px solid $gray3-color;
 
+          //accordion table
+          &.accordion-items {
+            border: none;
+
+            td {
+              padding:0px 0px 0px 3.9em;
+            }
+
+            dd {
+              background: $gray-7-color;
+              position: relative;
+              position: relative;
+              padding: 5px;
+              margin: 10px;
+            }
+          }
 
             .status-interactor {
                 a {
@@ -446,6 +554,11 @@
             .content-type__icon{
                 margin-right: 1em;
                 color: $gray-color;
+            }
+
+            .content-type__icon__ticket{
+              margin-right: 0.7em;
+              color: $primary-color;
             }
 
             .list-group-item__action{

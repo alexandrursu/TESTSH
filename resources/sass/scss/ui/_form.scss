@@ -1458,3 +1458,68 @@
         }
     }
 }
+
+// styled checkbox
+
+.ticket-checkbox {
+  float: right;
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  @include adjust-font-size-to(15px);
+
+  input[type="checkbox"] {
+    opacity: 0;
+    z-index: 1;
+    float: right;
+    margin-left: 5px;
+  }
+
+
+  label:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    right: -0.167em;
+    top: 0.3em;
+    margin-left: 1.667em;
+    border: 1px solid #CCC;
+    border-radius: 0.250em;
+    background-color: $gray-7-color;
+    transition: border 0.15s ease-in-out 0s, color 0.15s ease-in-out 0s;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  input[type="checkbox"] + label:before {
+    border-color: $red;
+  }
+
+  input[type="checkbox"] + label {
+    color: $red;
+    line-height: 23px;
+    display: block;
+    min-width: 115px;
+    text-align: right;
+  }
+  input[type="checkbox"]:checked + label {
+    color: $primary-color;
+  }
+  input[type="checkbox"]:checked + label:before {
+    border-color: $primary-color;
+    font-family: "FontAwesome";
+    content: "\f00c";
+    color:$primary-color;
+    font-size: 1em;
+    line-height: 0.9em;
+  }
+
+
+  input[type="checkbox"]:checked + label:after {
+    color: #fff;
+  }
+}
+
+

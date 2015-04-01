@@ -1125,3 +1125,16 @@
         }
     }
 }
+
+.table.keywords.tickets--list {
+  .btn--add {
+     position: relative;
+
+    .list-group-item__action{
+        position: absolute;
+        left: 129px;
+    }
+
+  }
+
+}
